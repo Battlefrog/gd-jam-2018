@@ -1,0 +1,346 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Scripts/GameUI.gd" type="Script" id=1]
+[ext_resource path="res://Sprites/wood.png" type="Texture" id=2]
+[ext_resource path="res://Sprites/match.png" type="Texture" id=3]
+[ext_resource path="res://font-normal.tres" type="DynamicFont" id=4]
+[ext_resource path="res://font-big.tres" type="DynamicFont" id=5]
+
+[node name="Control" type="Control"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 40.0
+margin_bottom = 40.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+script = ExtResource( 1 )
+next_level_name = null
+
+[node name="Inventory" type="Panel" parent="." index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 288.0
+margin_bottom = 72.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+
+[node name="slot" type="TextureRect" parent="Inventory" index="0"]
+
+visible = false
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 104.0
+margin_top = 8.0
+margin_right = 168.0
+margin_bottom = 64.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+texture = ExtResource( 2 )
+expand = true
+stretch_mode = 0
+_sections_unfolded = [ "Rect" ]
+
+[node name="matches" type="Node" parent="Inventory" index="1"]
+
+[node name="texture" type="TextureRect" parent="Inventory/matches" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 40.0
+margin_top = 8.0
+margin_right = 104.0
+margin_bottom = 64.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+texture = ExtResource( 3 )
+expand = true
+stretch_mode = 0
+_sections_unfolded = [ "Rect" ]
+
+[node name="MatchDisplay" type="Label" parent="Inventory/matches" index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 8.0
+margin_top = 24.0
+margin_right = 40.0
+margin_bottom = 56.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = ExtResource( 4 )
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "custom_colors", "custom_fonts" ]
+
+[node name="popup" type="Popup" parent="." index="1"]
+
+editor/display_folded = true
+visible = false
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 40.0
+margin_bottom = 40.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+popup_exclusive = false
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Background" type="ColorRect" parent="popup" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 1336.0
+margin_bottom = 768.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+color = Color( 1, 1, 1, 0.607843 )
+_sections_unfolded = [ "Rect" ]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Panel" type="Panel" parent="popup" index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 128.0
+margin_top = 280.0
+margin_right = 1176.0
+margin_bottom = 680.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+
+[node name="Header" type="Label" parent="popup" index="2"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 264.0
+margin_right = 1336.0
+margin_bottom = 368.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = ExtResource( 5 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+text = "You found Grandma's Hole!"
+align = 1
+valign = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "custom_colors", "custom_fonts" ]
+
+[node name="Text" type="Label" parent="popup" index="3"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 368.0
+margin_right = 1336.0
+margin_bottom = 470.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = ExtResource( 4 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+text = "Now Grandma apparently needs wood for the furnace. 
+
+Surely you, an 11-year old boy, can go out and get some wood?"
+align = 1
+valign = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "custom_colors", "custom_fonts" ]
+
+[node name="Instructions" type="Label" parent="popup" index="4"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 584.0
+margin_right = 1336.0
+margin_bottom = 656.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = ExtResource( 5 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+text = "*Click to Exit*"
+align = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "custom_colors", "custom_fonts" ]
+
+[node name="black" type="ColorRect" parent="." index="2"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 1336.0
+margin_bottom = 768.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+color = Color( 0, 0, 0, 1 )
+
+[node name="end" type="Label" parent="black" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 16.0
+margin_right = 1336.0
+margin_bottom = 80.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = ExtResource( 5 )
+text = "The End!"
+align = 1
+valign = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "custom_fonts" ]
+
+[node name="credits" type="RichTextLabel" parent="black" index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 16.0
+margin_top = 152.0
+margin_right = 1336.0
+margin_bottom = 768.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = true
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+custom_fonts/normal_font = ExtResource( 4 )
+bbcode_enabled = true
+bbcode_text = "\"Going to Grandmas\" - Made by Battlefrog of Sledgehog Software for the Godot Community Game Jam - June 2018.
+
+Credits:
+	Sounds from freesound.org (As I am not gifted in the art of sounds.):
+		https://freesound.org/people/zimbot/sounds/89387/
+		https://freesound.org/people/orginaljun/sounds/173342/
+		https://freesound.org/people/InspectorJ/sounds/431117/
+		https://freesound.org/people/RensvdMeijs/sounds/377068/
+		https://freesound.org/people/leosalom/sounds/234288/
+		https://freesound.org/people/Tristan_Lohengrin/sounds/244413/
+	
+	The font is PT-Sans.
+	And the rest is all me.
+	
+I hope you enjoyed the game! Please comment on what I should improve (A lot. I rushed it towards the end.)
+
+Press ESC to Quit."
+visible_characters = -1
+percent_visible = 1.0
+meta_underlined = true
+tab_size = 4
+text = "\"Going to Grandmas\" - Made by Battlefrog of Sledgehog Software for the Godot Community Game Jam - June 2018.
+
+Credits:
+	Sounds from freesound.org (As I am not gifted in the art of sounds.):
+		https://freesound.org/people/zimbot/sounds/89387/
+		https://freesound.org/people/orginaljun/sounds/173342/
+		https://freesound.org/people/InspectorJ/sounds/431117/
+		https://freesound.org/people/RensvdMeijs/sounds/377068/
+		https://freesound.org/people/leosalom/sounds/234288/
+		https://freesound.org/people/Tristan_Lohengrin/sounds/244413/
+	
+	The font is PT-Sans.
+	And the rest is all me.
+	
+I hope you enjoyed the game! Please comment on what I should improve (A lot. I rushed it towards the end.)
+
+Press ESC to Quit."
+scroll_active = true
+scroll_following = false
+selection_enabled = false
+override_selected_font_color = false
+_sections_unfolded = [ "BBCode", "custom_fonts" ]
+
+[connection signal="popup_hide" from="popup" to="." method="_on_popup_hide"]
+
+
